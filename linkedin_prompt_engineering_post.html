@@ -1,0 +1,186 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.card {
+  width: 680px;
+  height: 680px;
+  background: #F5EFE6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 44px 36px;
+  font-family: var(--font-sans);
+  position: relative;
+  overflow: hidden;
+}
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+.badge {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #7A5C3A;
+  background: #E8D8C4;
+  border: 0.5px solid #C9A87A;
+  border-radius: 20px;
+  padding: 4px 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.main-title {
+  font-size: 34px;
+  font-weight: 500;
+  color: #2E1E0E;
+  text-align: center;
+  line-height: 1.18;
+  margin-bottom: 4px;
+}
+.sub-title {
+  font-size: 13px;
+  color: #8C6A48;
+  text-align: center;
+  margin-bottom: 26px;
+  letter-spacing: 0.01em;
+}
+.panels {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  flex: 1;
+}
+.panel {
+  flex: 1;
+  border-radius: 14px;
+  padding: 20px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.panel.weak {
+  background: #EDE0D2;
+  border: 1px solid #C9A87A;
+}
+.panel.strong {
+  background: #2E1E0E;
+  border: 1px solid #4A3020;
+}
+.panel-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  align-self: flex-start;
+}
+.weak .panel-label { background: #C9A87A; color: #2E1E0E; }
+.strong .panel-label { background: #7A5C3A; color: #F5EFE6; }
+.prompt-box {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.weak .prompt-box { background: #F5EFE6; color: #4A3020; border: 0.5px solid #C9A87A; }
+.strong .prompt-box { background: #3D2A16; color: #D4B896; border: 0.5px solid #5A3E24; }
+.arrow-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8C6A48;
+}
+.strong .arrow-row { color: #A07850; }
+.arrow-icon {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.weak .arrow-icon { background: #C9A87A; color: #2E1E0E; }
+.strong .arrow-icon { background: #7A5C3A; color: #F5EFE6; }
+.output-box {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.weak .output-box { background: #D9C8B4; color: #5A3E24; border: 0.5px solid #B8946A; }
+.strong .output-box { background: #4A3020; color: #EBD9C3; border: 0.5px solid #6B4C2E; }
+.panel-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.weak .panel-title { color: #4A3020; }
+.strong .panel-title { color: #F5EFE6; }
+.footer {
+  margin-top: 18px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-tag {
+  font-size: 11px;
+  color: #8C6A48;
+  letter-spacing: 0.04em;
+}
+.dots {
+  display: flex; gap: 6px;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #C9A87A;
+  opacity: 0.5;
+}
+.dot.active { opacity: 1; background: #7A5C3A; }
+</style>
+
+<div class="card">
+  <div class="deco-circle" style="width:320px;height:320px;background:#E8D8C4;opacity:0.35;top:-120px;right:-100px;"></div>
+  <div class="deco-circle" style="width:180px;height:180px;background:#C9A87A;opacity:0.12;bottom:-60px;left:-50px;"></div>
+
+  <div class="badge">abtalks · 60 days claude challenge</div>
+  <div class="main-title">Prompt Engineering</div>
+  <div class="sub-title">How you ask shapes what you get</div>
+
+  <div class="panels">
+    <div class="panel weak">
+      <div class="panel-label">Weak prompt</div>
+      <div class="panel-title">Vague input</div>
+      <div class="prompt-box">"Write about marketing."</div>
+      <div class="arrow-row">
+        <div class="arrow-icon">↓</div>
+        <span>AI output</span>
+      </div>
+      <div class="output-box">A long, generic essay covering the broad history and principles of marketing — nothing actionable.</div>
+    </div>
+
+    <div class="panel strong">
+      <div class="panel-label">Engineered prompt</div>
+      <div class="panel-title">Precise input</div>
+      <div class="prompt-box">"You are a brand strategist. Write 5 Instagram captions for a sustainable skincare brand, under 150 chars each."</div>
+      <div class="arrow-row">
+        <div class="arrow-icon">↓</div>
+        <span>AI output</span>
+      </div>
+      <div class="output-box">5 punchy, ready-to-post captions with the right tone, audience fit, and length. Done in seconds.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-tag">Day 01 · Prompt Engineering · #AIforBeginners</div>
+    <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
